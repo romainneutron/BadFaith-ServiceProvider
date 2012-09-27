@@ -1,7 +1,7 @@
 #BadFaith Silex ServiceProvider
 
 BadFaith is a content negociation library you will find
-(here)[https://github.com/winmillwill/BadFaith].
+[here](https://github.com/winmillwill/BadFaith).
 
 Here is the Silex Service Provider :
 
