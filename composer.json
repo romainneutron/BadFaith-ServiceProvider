@@ -1,8 +1,8 @@
 {
     "name": "neutron/silex-badfaith-provider",
     "type": "library",
-    "description": "",
-    "keywords": [""],
+    "description": "A provider to BadFaith content negociation library",
+    "keywords": ["content negociation"],
     "license": "MIT",
     "authors": [
     {
