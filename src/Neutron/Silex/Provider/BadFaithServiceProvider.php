@@ -21,7 +21,17 @@ class BadFaithServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $app['bad-faith'] = $app->share(function(Application $app) {
-            return new Negotiator($app['request']->server->all(), $app['bad-faith.variants']);
+            $server = $app['request']->server->all();
+            $normalized = array();
+            array_walk($server, function($header, &$key) use (&$normalized) {
+                $key = strtolower($key);
+                if (strpos($key, 'http_') === 0) {
+                    $key = substr($key, 5);
+                }
+                $normalized[$key] = $header;
+            });
+
+            return new Negotiator($normalized, $app['bad-faith.variants']);
         });
 
         $app['bad-faith.variants'] = array();
