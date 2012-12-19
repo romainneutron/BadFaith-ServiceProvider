@@ -15,7 +15,7 @@ $app['bad-faith.variants'] = array(
 );
 
 $app->get('/', function(Application $app) {
-    $app['bad-faith']->getPreferred('encoding');
+    $app['bad-faith']->headerLists['accept_language']->getPreferred();
 });
 $app->run();
 ```
